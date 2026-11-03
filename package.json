@@ -8,6 +8,9 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "tauri": "tauri",
+    "test": "cargo test --manifest-path src-tauri/Cargo.toml && node scripts/test-connectivity.cjs",
+    "test:network": "node scripts/test-connectivity.cjs",
+    "test:bots": "cargo test --manifest-path src-tauri/Cargo.toml --test mock_bots_e2e -- --nocapture",
     "mock:bots": "cargo run --manifest-path src-tauri/Cargo.toml --bin mock_client"
   },
   "dependencies": {

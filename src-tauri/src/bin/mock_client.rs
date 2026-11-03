@@ -275,14 +275,28 @@ async fn run_bot(config: &'static BotConfig, port: u16) {
 
 #[tokio::main]
 async fn main() {
-    let port = std::env::args()
-        .nth(1)
+    let args: Vec<String> = std::env::args().collect();
+    if args.iter().any(|a| a == "--help" || a == "-h") {
+        println!("🤖 Word Guess Assistant - 虚拟特工测试客户端 (Mock Bots)");
+        println!("用法: pnpm mock:bots [端口号] [机器人数量]");
+        println!("参数说明:");
+        println!("  [端口号]       房主监听的局域网端口，默认 8888");
+        println!("  [机器人数量]   启动的 AI 特工数量 (1 ~ 11)，默认 8");
+        println!("示例:");
+        println!("  pnpm mock:bots          # 连接 127.0.0.1:8888，启动 8 名特工");
+        println!("  pnpm mock:bots 8888 4   # 连接 127.0.0.1:8888，启动 4 名特工");
+        println!("  pnpm test:bots          # 纯终端自动化闭环集成对决测试");
+        return;
+    }
+
+    let port = args
+        .get(1)
         .and_then(|p| p.parse::<u16>().ok())
         .unwrap_or(8888);
 
     // 默认启动 8 名虚拟陪玩机器人（加上房主自身恰好为 9 人局，完美体验白天公投、黑夜盲动暗杀与后续轮次）
-    let bot_count = std::env::args()
-        .nth(2)
+    let bot_count = args
+        .get(2)
         .and_then(|c| c.parse::<usize>().ok())
         .unwrap_or(8)
         .clamp(1, BOTS.len());

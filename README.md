@@ -598,14 +598,21 @@ flowchart TD
 ### 7. 本地联调、单元测试与多特工虚拟对决
 
 ```bash
-# 1. 运行底层全部核心单元测试 (编解码、SSDP 探针、状态机、黑夜暗杀、白板终局)
+# 1. 运行底层全部核心单元测试与端到端机器人对决 (编解码、SSDP 探针、状态机、黑夜暗杀、白板终局)
 cargo test --manifest-path src-tauri/Cargo.toml
 
-# 2. 前端 TypeScript 严格类型检查与 Vite 生产编译
-pnpm build
+# 2. 全链路网络连通性自检诊断 (国内 STUN 穿透矩阵、WSS 信令通道、本地 TCP/UDP 套接字)
+pnpm test:network
 
-# 3. 启动 8 名 AI 虚拟特工并发压测对决 (支持测试 9 人完整对局)
-pnpm mock:bots
+# 3. 纯终端无头自动化机器人闭环集成对决 (端到端模拟 4 特工从进房、发词、描述、公投到结算)
+pnpm test:bots
+
+# 4. 房主建房后联调：启动 8 名 AI 虚拟特工并发接入真实房间 (支持自定义端口与特工数)
+pnpm mock:bots          # 默认连接 127.0.0.1:8888 启动 8 名机器人
+pnpm mock:bots 8888 4   # 连接 127.0.0.1:8888 启动 4 名机器人
+
+# 5. 前端 TypeScript 严格类型检查与 Vite 生产编译
+pnpm build
 ```
 
 ---
