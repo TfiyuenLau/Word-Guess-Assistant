@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">"word-guess-assistant"</string>
+    <string name="main_activity_title">"word-guess-assistant"</string>
+</resources>

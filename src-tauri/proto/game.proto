@@ -1,0 +1,74 @@
+syntax = "proto3";
+package game;
+
+enum GamePhase {
+  PREPARING = 0;
+  DESCRIPTION = 1;
+  VOTING = 2;
+  NIGHT_ACTION = 3;
+  SETTLEMENT = 4;
+  BLANK_GUESS = 5;
+}
+
+message JoinRequest {
+  string player_id = 1;
+  string player_name = 2;
+  string avatar = 3;
+}
+
+message LeaveRequest {
+  string player_id = 1;
+}
+
+message IdentityAssignment {
+  string role = 1;
+  string word = 2;
+  string hint = 3;
+}
+
+message ChatMessage {
+  string sender_id = 1;
+  string text = 2;
+  bool is_system = 3;
+}
+
+message VoteAction {
+  string voter_id = 1;
+  string target_id = 2;
+}
+
+message NightAction {
+  string actor_id = 1;
+  string target_id = 2;
+}
+
+message SyncPhase {
+  GamePhase new_phase = 1;
+  string extra_info = 2;
+}
+
+message BlankGuessAction {
+  string player_id = 1;
+  string word_a = 2;
+  string word_b = 3;
+}
+
+message Heartbeat {
+  string player_id = 1;
+  int64 timestamp = 2;
+}
+
+message GameMessage {
+  oneof data {
+    JoinRequest join_req = 1;
+    LeaveRequest leave_req = 2;
+    IdentityAssignment identity = 3;
+    ChatMessage chat = 4;
+    VoteAction vote = 5;
+    NightAction night = 6;
+    SyncPhase sync_phase = 7;
+    Heartbeat heartbeat = 8;
+    BlankGuessAction blank_guess = 9;
+  }
+}
+

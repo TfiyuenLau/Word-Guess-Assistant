@@ -1,0 +1,19 @@
+{
+  "name": "卧底猜词助手",
+  "short_name": "猜词助手",
+  "description": "基于局域网多端自发现的聚会博弈身份推理猜词游戏助手",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#121827",
+  "theme_color": "#121827",
+  "icons": [
+    {
+      "src": "/avatar/characters/detective.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
+

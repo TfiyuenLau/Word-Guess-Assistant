@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="48" fill="#18181b" stroke="#a1a1aa" stroke-width="4"/>
+  <!-- 左半人脸 (肉体) -->
+  <path d="M50 24 C35 24 30 35 30 50 C30 65 38 72 50 74 Z" fill="#fed7aa"/>
+  <!-- 右半人脸 (机械金属) -->
+  <path d="M50 24 C65 24 70 35 70 50 C70 65 62 72 50 74 Z" fill="#71717a"/>
+  <!-- 左眼 (正常) -->
+  <circle cx="42" cy="48" r="3" fill="#18181b"/>
+  <!-- 右眼 (赛博发光红眼) -->
+  <circle cx="58" cy="48" r="4.5" fill="#ef4444"/>
+  <circle cx="58" cy="48" r="2" fill="#fecaca"/>
+  <!-- 机械接缝线条与金属孔 -->
+  <line x1="50" y1="24" x2="50" y2="74" stroke="#dc2626" stroke-width="2"/>
+  <line x1="54" y1="36" x2="66" y2="36" stroke="#27272a" stroke-width="2"/>
+  <line x1="54" y1="60" x2="64" y2="60" stroke="#27272a" stroke-width="2"/>
+  <circle cx="64" cy="40" r="1.5" fill="#e4e4e7"/>
+  <circle cx="62" cy="65" r="1.5" fill="#e4e4e7"/>
+</svg>
+

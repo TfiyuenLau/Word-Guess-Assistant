@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="48" fill="#451a03" stroke="#d97706" stroke-width="4"/>
+  <!-- 熊耳朵 -->
+  <circle cx="28" cy="28" r="12" fill="#78350f"/>
+  <circle cx="28" cy="28" r="7" fill="#b45309"/>
+  <circle cx="72" cy="28" r="12" fill="#78350f"/>
+  <circle cx="72" cy="28" r="7" fill="#b45309"/>
+  <!-- 大脸盘 -->
+  <circle cx="50" cy="56" r="30" fill="#92400e"/>
+  <!-- 眼睛 -->
+  <circle cx="38" cy="48" r="3.5" fill="#1e1b4b"/>
+  <circle cx="62" cy="48" r="3.5" fill="#1e1b4b"/>
+  <!-- 凸起鼻吻部 -->
+  <ellipse cx="50" cy="62" rx="16" ry="12" fill="#fde68a"/>
+  <ellipse cx="50" cy="58" rx="6" ry="4" fill="#451a03"/>
+  <path d="M46 64 Q50 68 54 64" stroke="#451a03" stroke-width="2.5" fill="none"/>
+</svg>
+

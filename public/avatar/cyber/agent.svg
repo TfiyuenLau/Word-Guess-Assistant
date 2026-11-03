@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="48" fill="#090d16" stroke="#06b6d4" stroke-width="4"/>
+  <!-- 特工西装肩部 -->
+  <path d="M20 90 L35 68 L50 78 L65 68 L80 90 Z" fill="#1e293b"/>
+  <path d="M44 74 L50 78 L56 74 L54 90 L46 90 Z" fill="#0891b2"/>
+  <!-- 头型与利落短发 -->
+  <circle cx="50" cy="46" r="22" fill="#fed7aa"/>
+  <path d="M28 42 Q50 20 72 42 L68 30 Q50 16 32 30 Z" fill="#0f172a"/>
+  <!-- 赛博 HUD 单眼护目镜 -->
+  <rect x="32" y="42" width="36" height="10" rx="3" fill="#042f2e"/>
+  <rect x="34" y="44" width="32" height="6" rx="2" fill="#22d3ee"/>
+  <line x1="38" y1="47" x2="62" y2="47" stroke="#ffffff" stroke-width="1.5"/>
+  <!-- 战术耳麦 -->
+  <rect x="25" y="42" width="5" height="12" rx="2" fill="#0891b2"/>
+  <path d="M28 54 Q36 62 44 58" stroke="#0891b2" stroke-width="2" fill="none"/>
+</svg>
+

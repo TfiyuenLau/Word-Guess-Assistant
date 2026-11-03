@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="48" fill="#450a0a" stroke="#f59e0b" stroke-width="4"/>
+  <!-- 头型与发型 -->
+  <circle cx="50" cy="52" r="26" fill="#fed7aa"/>
+  <path d="M22 46 Q50 18 78 46 L76 34 Q50 12 24 34 Z" fill="#b45309"/>
+  <!-- 英雄多边形眼罩 -->
+  <path d="M28 46 L45 42 L50 48 L55 42 L72 46 L68 56 L55 52 L50 56 L45 52 L32 56 Z" fill="#dc2626"/>
+  <ellipse cx="40" cy="48" rx="4" ry="2.5" fill="#ffffff"/>
+  <ellipse cx="60" cy="48" rx="4" ry="2.5" fill="#ffffff"/>
+  <!-- 披风领口与战甲 -->
+  <path d="M20 90 L38 72 L50 78 L62 72 L80 90 Z" fill="#991b1b"/>
+  <polygon points="50,68 56,76 44,76" fill="#facc15"/>
+</svg>
+

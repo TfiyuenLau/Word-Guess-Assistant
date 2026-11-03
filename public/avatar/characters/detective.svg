@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="48" fill="#1e293b" stroke="#38bdf8" stroke-width="4"/>
+  <!-- 侦探帽子 -->
+  <ellipse cx="50" cy="40" rx="35" ry="8" fill="#334155"/>
+  <path d="M25 40 Q50 15 75 40 Z" fill="#475569"/>
+  <rect x="25" y="36" width="50" height="6" fill="#0ea5e9"/>
+  <!-- 墨镜 / 脸部 -->
+  <circle cx="50" cy="55" r="22" fill="#fed7aa"/>
+  <path d="M36 50 L46 50 L44 58 L38 58 Z" fill="#0f172a"/>
+  <path d="M54 50 L64 50 L62 58 L56 58 Z" fill="#0f172a"/>
+  <line x1="46" y1="52" x2="54" y2="52" stroke="#0f172a" stroke-width="2"/>
+  <!-- 大衣衣领 -->
+  <path d="M30 85 L50 68 L70 85 L85 96 L15 96 Z" fill="#334155"/>
+  <path d="M42 75 L50 68 L58 75 L53 92 L47 92 Z" fill="#e2e8f0"/>
+  <!-- 烟斗/放大镜细节 -->
+  <circle cx="68" cy="72" r="8" fill="none" stroke="#f59e0b" stroke-width="3"/>
+  <line x1="74" y1="78" x2="84" y2="88" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+</svg>
+
