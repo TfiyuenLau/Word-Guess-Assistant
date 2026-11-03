@@ -465,7 +465,7 @@ Word-Guess-Assistant/
 
 | 目标平台 | 前端环境 | Rust / C++ 编译环境 | 平台特有 SDK / 工具链 | 产物形态 |
 | :--- | :--- | :--- | :--- | :--- |
-| **Android** | Node.js 20+, pnpm 9+ | `rustc` + `aarch64-linux-android` + `protoc` | JDK 17+, Android SDK 37, NDK 26+ | `.apk` (已签名安装包), `.aab` |
+| **Android** | Node.js 20+, pnpm 9+ | `rustc` + `aarch64-linux-android` + `protoc` | JDK 17+, Android SDK 36, NDK 26+ | `.apk` (已签名安装包), `.aab` |
 | **Linux** | Node.js 20+, pnpm 9+ | `rustc` (stable-x86_64) + gcc + `protoc` | `libwebkit2gtk-4.1-dev`, `libgtk-3-dev`, `librsvg2-dev` | 原生 ELF 二进制, `.deb`, `.AppImage` |
 | **Windows** | Node.js 20+, pnpm 9+ | `rustc` (x86_64-pc-windows-msvc) + MSVC + `protoc` | WebView2, NSIS 3+, WiX Toolset v3 | `.exe` (NSIS 安装包), `.msi`, Portable EXE |
 | **Web** | Node.js 20+, pnpm 9+ | 仅前端打包 (Vite + TypeScript) | 任意静态托管 (GitHub Pages)、Nginx 或 Docker | 静态 HTML/JS/CSS 资产, PWA, Docker 镜像 |
