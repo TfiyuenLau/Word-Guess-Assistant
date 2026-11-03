@@ -398,18 +398,18 @@ function handleResetSettings() {
         </span>
       </button>
 
-      <!-- 第二部分：核心推荐模式：WebRTC P2P 全平台房间号联机 -->
+      <!-- 第二部分：核心推荐模式：房间号联机 -->
       <section class="card bg-base-100 shadow-md border-2 border-primary/30 hover:border-primary/60 transition-all p-4 space-y-3.5">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-1.5">
-            <span class="text-lg">🌐</span>
-            <h3 class="font-bold text-sm text-primary">WebRTC P2P 房间号快速联机</h3>
+            <span class="text-lg">🎮</span>
+            <h3 class="font-bold text-sm text-primary">房间号快速联机</h3>
           </div>
-          <span class="badge badge-primary badge-xs font-bold">推荐全平台</span>
+          <span class="badge badge-primary badge-xs font-bold">推荐首选</span>
         </div>
 
         <p class="text-xs text-base-content/70 leading-relaxed bg-base-200/50 p-2.5 rounded-lg border border-base-200">
-          ✨ 纯网页、安卓手机与电脑客户端零门槛互联。同 Wi-Fi 局域网下自动切换内网直连（0 流量延迟）。
+          ✨ 聚会首选：房主创建房间生成 4 位房间号，好友输入即可一秒进房。
         </p>
 
         <!-- 创建房间与加入房间卡片 -->
@@ -421,7 +421,7 @@ function handleResetSettings() {
             @click="handleCreateP2PRoom"
           >
             <span v-if="isSubmitting" class="loading loading-spinner loading-xs"></span>
-            <span>🎲 创建新房间 (生成专属房间号)</span>
+            <span>🎲 创建新房间 (生成 4 位房间号)</span>
           </button>
 
           <!-- 分隔线 -->
@@ -449,23 +449,23 @@ function handleResetSettings() {
         </div>
       </section>
 
-      <!-- 第三部分：折叠高级模式：局域网 IP 直连 (传统离线 Listen-Server) -->
+      <!-- 第三部分：折叠离线模式：局域网 IP 直连 -->
       <details class="collapse collapse-arrow bg-base-100 border border-base-300 shadow-sm rounded-box">
         <summary class="collapse-title text-xs font-bold text-base-content/80 flex items-center gap-1.5 py-3">
-          <span>📶</span>
-          <span>局域网 IP 直连 (高级离线模式)</span>
+          <span>🔌</span>
+          <span>局域网 IP 直连 (无网离线模式)</span>
           <span class="badge badge-ghost badge-xs text-[10px]">纯本地断网专用</span>
         </summary>
         <div class="collapse-content space-y-4 pt-1">
           <p class="text-[11px] text-base-content/60 leading-relaxed">
-            在无外网接入的极端离线环境（如无网热点/露营），可通过原生底层 TCP 端口与局域网 IP 直连对决。
+            适合无外网信号的户外露营或封闭局域网，通过 IP 地址直接联机。
           </p>
 
           <!-- 房主模式：创建 TCP 房间 -->
           <div class="p-3 bg-base-200/50 rounded-lg border border-base-200 space-y-2">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-bold text-base-content/80">房主建房 (TCP)</span>
-              <span class="badge badge-outline badge-xs">端口监听</span>
+              <span class="text-xs font-bold text-base-content/80">房主创建离线房间</span>
+              <span class="badge badge-outline badge-xs">本地端口</span>
             </div>
             <div class="join w-full">
               <input
@@ -481,14 +481,14 @@ function handleResetSettings() {
                 :disabled="isSubmitting"
                 @click="handleCreateTcpRoom"
               >
-                开启监听
+                开启房间
               </button>
             </div>
           </div>
 
           <!-- 玩家模式：直连 IP 加入 -->
           <div class="p-3 bg-base-200/50 rounded-lg border border-base-200 space-y-2">
-            <span class="text-xs font-bold text-base-content/80">玩家直连 IP 加入</span>
+            <span class="text-xs font-bold text-base-content/80">输入房主 IP 加入</span>
             <div class="grid grid-cols-3 gap-2">
               <div class="form-control col-span-2">
                 <input
@@ -514,7 +514,7 @@ function handleResetSettings() {
               :disabled="isSubmitting"
               @click="handleJoinTcpRoom"
             >
-              直连 IP 进入对决
+              加入房间
             </button>
           </div>
 
@@ -523,7 +523,7 @@ function handleResetSettings() {
             <div class="flex items-center justify-between">
               <span class="text-xs font-bold text-base-content/80 flex items-center gap-1">
                 <span>📡</span>
-                <span>局域网探针自动发现</span>
+                <span>在线房间自动发现</span>
                 <span v-if="discoveredRooms.length > 0" class="badge badge-secondary badge-xs font-mono font-bold">
                   {{ discoveredRooms.length }}
                 </span>
@@ -539,7 +539,7 @@ function handleResetSettings() {
             </div>
 
             <div v-if="discoveredRooms.length === 0" class="py-2 text-center text-[11px] text-base-content/50">
-              未检测到活跃广播。确保房主在同 Wi-Fi 开启了 TCP 房间。
+              未发现房间。请确保房主已开启房间且连接了同一 Wi-Fi。
             </div>
 
             <div v-else class="space-y-1.5 max-h-36 overflow-y-auto">
@@ -563,7 +563,7 @@ function handleResetSettings() {
 
     <!-- 底部版权信息 -->
     <footer class="footer footer-center py-2 px-4 bg-base-100 text-base-content/40 border-t border-base-300 text-[10px] flex-none">
-      <p>Word Guess Assistant © 2026 — WebRTC P2P & Serverless LAN 猜词博弈引擎</p>
+      <p>Word Guess Assistant © 2026 — 卧底猜词助手</p>
     </footer>
 
     <!-- 网络信令设置模态框 (Settings Modal) -->

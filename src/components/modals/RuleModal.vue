@@ -19,104 +19,112 @@ function close() {
       <div class="flex items-center justify-between border-b border-base-200 pb-2">
         <h3 class="font-bold text-sm sm:text-base flex items-center gap-1.5 text-primary">
           <span>📖</span>
-          <span>游戏规则与身份指引</span>
+          <span>游戏规则与基础玩法</span>
         </h3>
         <button class="btn btn-xs btn-circle btn-ghost" @click="close">✕</button>
       </div>
 
       <!-- 滚动内容区域 -->
       <div class="max-h-[70vh] overflow-y-auto space-y-3 pr-1 text-xs">
-        <!-- 1. 终局胜负判定 -->
-        <section class="bg-base-200/80 rounded-xl p-3 border border-base-300">
-          <h4 class="font-bold text-xs text-primary mb-2 flex items-center gap-1">
-            <span>🏆</span> 终局胜负条件
+        <!-- 1. 玩法简介与胜负判定 -->
+        <section class="bg-base-200/80 rounded-xl p-3 border border-base-300 space-y-2">
+          <h4 class="font-bold text-xs text-primary flex items-center gap-1">
+            <span>🏆</span> 胜负目标
           </h4>
-          <ul class="space-y-1.5 leading-relaxed text-base-content/80">
-            <li class="flex items-start gap-1.5">
+          <div class="space-y-1.5 text-base-content/80 leading-relaxed">
+            <div class="flex items-start gap-1.5">
               <span class="badge badge-primary badge-xs mt-0.5 shrink-0">好人胜</span>
-              <span>所有卧底出局，<strong>且白板被找出并猜词失败</strong>（若卧底全灭但白板仍存活潜伏，好人无法直接获胜，需继续公投寻找白板）。</span>
-            </li>
-            <li class="flex items-start gap-1.5">
+              <span>找出所有卧底并投票放逐，<strong>且白板被找出并猜词失败</strong>。</span>
+            </div>
+            <div class="flex items-start gap-1.5">
               <span class="badge badge-error badge-xs mt-0.5 shrink-0">卧底胜</span>
-              <span>存活卧底人数<strong>大于或等于</strong>存活好人人数（平民好人 + 天使）。</span>
-            </li>
-            <li class="flex items-start gap-1.5">
+              <span>存活的卧底人数<strong>大于或等于</strong>存活的好人人数。</span>
+            </div>
+            <div class="flex items-start gap-1.5">
               <span class="badge badge-secondary badge-xs mt-0.5 shrink-0">白板胜</span>
-              <span>白板白天被公投出局后，在专属猜词阶段<strong>同时准确猜中双方词汇</strong>，直接独立逆袭获胜！</span>
-            </li>
-          </ul>
+              <span>白天被投票出局后，<strong>同时准确猜中好人词与卧底词</strong>，直接独立获胜！</span>
+            </div>
+          </div>
         </section>
 
-        <!-- 2. 四大秘境身份 -->
-        <section class="bg-base-200/80 rounded-xl p-3 border border-base-300">
-          <h4 class="font-bold text-xs text-secondary mb-2 flex items-center gap-1">
-            <span>🎭</span> 四大秘境身份
+        <!-- 2. 四大角色介绍 -->
+        <section class="bg-base-200/80 rounded-xl p-3 border border-base-300 space-y-2">
+          <h4 class="font-bold text-xs text-secondary flex items-center gap-1">
+            <span>🎭</span> 四大角色说明
           </h4>
           <div class="grid grid-cols-1 gap-2">
             <!-- 好人 -->
             <div class="bg-base-100 p-2.5 rounded-lg border border-base-200">
-              <div class="flex items-center gap-1.5 font-bold text-primary mb-1">
-                <span>🛡️</span>
-                <span>平民好人 (Good)</span>
+              <div class="font-bold text-primary flex items-center gap-1 mb-0.5">
+                <span>🛡️</span> 平民好人
               </div>
               <p class="text-base-content/70 leading-normal">
-                获知多数派词（好词）。发词阶段统称「特工」，需在发言中自辨多数派/少数派；白天参与公投，夜间禁止动刀（盲动将导致自身自爆）。
+                拿到多数派词（好词）。发词时不显示好人角标，需通过大家发言判断自己是否属于多数派；白天参与公投，夜间禁止动刀。
               </p>
             </div>
 
             <!-- 卧底 -->
             <div class="bg-base-100 p-2.5 rounded-lg border border-base-200">
-              <div class="flex items-center gap-1.5 font-bold text-error mb-1">
-                <span>🕵️</span>
-                <span>卧底 (Spy)</span>
+              <div class="font-bold text-error flex items-center gap-1 mb-0.5">
+                <span>🕵️</span> 卧底
               </div>
               <p class="text-base-content/70 leading-normal">
-                获知少数派词（坏词）。发词阶段统称「特工」自辨阵营；白天伪装发言引导好人互踩，夜间拥有暗杀特权（可刺杀一名特工或静默）。
+                拿到少数派词（坏词）。伪装发言隐藏词义差异；夜间拥有暗杀特权（可选择刺杀一名玩家或放弃）。
               </p>
             </div>
 
             <!-- 天使 -->
             <div class="bg-base-100 p-2.5 rounded-lg border border-base-200">
-              <div class="flex items-center gap-1.5 font-bold text-info mb-1">
-                <span>👼</span>
-                <span>天使 (Angel)</span>
+              <div class="font-bold text-info flex items-center gap-1 mb-0.5">
+                <span>👼</span> 天使 (好人阵营)
               </div>
               <p class="text-base-content/70 leading-normal">
-                归属好人阵营。<strong>同时获知好词与坏词（顺序随机未知好坏）</strong>；需通过众人发言辨析真假词，在隐蔽自身的前提下暗中引导好人公投卧底。
+                <strong>发词时同时看到好词与坏词（顺序随机）</strong>。需通过发言辨析真假词，在不暴露自身身份的前提下引导好人公投卧底。
               </p>
             </div>
 
             <!-- 白板 -->
             <div class="bg-base-100 p-2.5 rounded-lg border border-base-200">
-              <div class="flex items-center gap-1.5 font-bold text-secondary mb-1">
-                <span>🎭</span>
-                <span>白板 (Blank)</span>
+              <div class="font-bold text-secondary flex items-center gap-1 mb-0.5">
+                <span>🎭</span> 白板
               </div>
               <p class="text-base-content/70 leading-normal">
-                无词（仅有模糊方向提示）。夜间被杀正常出局（不触发猜词）；白天若被公投出局，触发专属双词逆袭特别阶段，猜中好词与坏词即可直接获胜！
+                <strong>没有词</strong>（仅有一句模糊方向提示）。夜间被暗杀正常出局；白天若被投票出局，触发专属猜词机会，完全猜对双词直接翻盘获胜！
               </p>
             </div>
           </div>
         </section>
 
-        <!-- 3. 核心流程与博弈技巧 -->
-        <section class="bg-base-200/80 rounded-xl p-3 border border-base-300">
-          <h4 class="font-bold text-xs text-warning mb-2 flex items-center gap-1">
-            <span>💡</span> 核心流程与实用技巧
+        <!-- 3. 游戏流程与实用功能 -->
+        <section class="bg-base-200/80 rounded-xl p-3 border border-base-300 space-y-2">
+          <h4 class="font-bold text-xs text-warning flex items-center gap-1">
+            <span>⚙️</span> 流程与实用功能
           </h4>
-          <ul class="space-y-1.5 text-base-content/70 leading-relaxed list-disc list-inside">
-            <li><strong>首日一句话发言</strong>：每人仅在第 1 轮白天描述一次，后续轮次无需重复发言，历史发言将在白天自动整理到聊天流底部供随时翻阅比对。</li>
-            <li><strong>私密单选投票</strong>：公投全程保密，仅显示本人所投对象，公屏仅播报匿名投票进度；提交后不可更改。</li>
-            <li><strong>特工推测便签</strong>：点击聊天区其他玩家头像，可私密标记身份推测（好人/卧底/天使/白板），彩色徽章仅自己可见，终局自动清空。</li>
-            <li><strong>断线无感重连</strong>：网络波动或意外刷新时，重新加入自动恢复原有身份与对局状态；中途加入的陌生访客将转入观战席。</li>
+          <ul class="space-y-1.5 text-base-content/70 leading-relaxed">
+            <li class="flex items-start gap-1">
+              <span class="text-warning font-bold">•</span>
+              <span><strong>首轮一句话描述</strong>：每人仅在第 1 轮白天描述发言一次，后续轮次无需重复发言，历史线索会自动汇总在聊天底部供查阅。</span>
+            </li>
+            <li class="flex items-start gap-1">
+              <span class="text-warning font-bold">•</span>
+              <span><strong>私密单选投票</strong>：投票全程保密，公屏仅播报匿名进度，提交后立即锁定不可更改。</span>
+            </li>
+            <li class="flex items-start gap-1">
+              <span class="text-warning font-bold">•</span>
+              <span><strong>特工推测便签</strong>：点击聊天区任意玩家头像，可私密标记身份推测（好人/卧底/天使/白板），彩色标记仅自己可见。</span>
+            </li>
+            <li class="flex items-start gap-1">
+              <span class="text-warning font-bold">•</span>
+              <span><strong>掉线自动重连</strong>：如果不小心刷新页面或切出后台，重新进入房间会自动恢复原有身份与对局状态。</span>
+            </li>
           </ul>
         </section>
       </div>
 
       <!-- 底部关闭按钮 -->
       <div class="modal-action mt-2 pt-2 border-t border-base-200">
-        <button class="btn btn-sm btn-primary w-full" @click="close">
-          好的，已知悉规则
+        <button class="btn btn-sm btn-primary w-full font-bold" @click="close">
+          知道了，开始对决
         </button>
       </div>
     </div>
@@ -127,4 +135,3 @@ function close() {
     </form>
   </dialog>
 </template>
-
